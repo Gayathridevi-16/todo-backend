@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,14 +7,17 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: [
+        'http://localhost:3000',
+        'https://todo-frontend-git-main-gayathridevi-16s-projects.vercel.app'
+    ]
 }));
 
 app.use(express.json());
 
 
 //connecting mongodb
-mongoose.connect('mongodb://localhost:27017/mern-app')
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     console.log('DB connection successful')
 })
