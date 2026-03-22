@@ -9,7 +9,8 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:3000',
-        'https://todo-frontend-git-main-gayathridevi-16s-projects.vercel.app'
+        'https://todo-frontend-git-main-gayathridevi-16s-projects.vercel.app',
+        'https://todo-frontend-five-alpha.vercel.app'
     ]
 }));
 
